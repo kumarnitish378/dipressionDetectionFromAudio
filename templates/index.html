@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Detection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .btn-upload {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Depression Detection</h1>
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="file" class="form-control-file">
+            </div>
+            <button type="submit" class="btn btn-primary btn-upload">Upload & Predict</button>
+        </form>
+        {% if prediction %}
+            <div class="alert alert-success mt-3" role="alert">
+                Prediction: {{ prediction }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
