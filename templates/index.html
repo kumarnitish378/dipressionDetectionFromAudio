@@ -4,35 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Depression Detection</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
+            font-family: Arial, sans-serif;
             background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
         }
         .container {
-            margin-top: 50px;
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .btn-upload {
-            margin-top: 20px;
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .alert {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        form {
+            text-align: center;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center">Depression Detection</h1>
+        <h1>Depression Detection</h1>
         {% if error %}
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger">
                 {{ error }}
             </div>
         {% endif %}
         <form method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <input type="file" name="file" class="form-control-file">
-            </div>
-            <button type="submit" class="btn btn-primary btn-upload">Upload & Predict</button>
+            <input type="file" name="file">
+            <br>
+            <button type="submit" class="btn">Upload & Predict</button>
         </form>
         {% if prediction %}
-            <div class="alert alert-success mt-3" role="alert">
+            <div class="alert alert-success">
                 Prediction: {{ prediction }}
             </div>
         {% endif %}
