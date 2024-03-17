@@ -54,11 +54,22 @@
         input[type="file"] {
             margin-bottom: 20px;
         }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        p {
+        font-size: 16px;
+        margin-bottom: 10px; /* Adjust as needed */
+        color: #333; /* Adjust text color */
+    }
+
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Depression Detection</h1>
+        <h1>Depression Detection (Phd Project)</h1>
+        <p>Upload your audio File (Conversation with Psychiatrist)</p><br>
         {% if error %}
             <div class="alert alert-danger">
                 {{ error }}
@@ -74,6 +85,10 @@
                 Prediction: {{ prediction }}
             </div>
         {% endif %}
+        <div class="auth">
+            <p>By: Dr. Arjita Choubey (Phd)</p>
+        </div>
     </div>
+
 </body>
 </html>

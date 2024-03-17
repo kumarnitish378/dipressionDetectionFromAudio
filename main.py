@@ -7,7 +7,7 @@ def predict_depression(audio_file):
     # Your prediction logic goes here
     # Load the audio file, preprocess it, and use your AI model for prediction
     # Return the predicted result
-    return "Depressed/undepressed"  # Placeholder for demonstration
+    return "50% Depressed and 50 % Normal"  # Placeholder for demonstration
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
