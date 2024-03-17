@@ -44,6 +44,7 @@
         }
         .btn {
             padding: 10px 20px;
+            margin-bottom: 20px;
             font-size: 16px;
             background-color: #007bff;
             color: #fff;
@@ -78,7 +79,7 @@
         <form method="post" enctype="multipart/form-data">
             <input type="file" name="file">
             <br>
-            <button type="submit" class="btn">Upload & Predict</button>
+            <button type="submit" class="btn">Upload & Predict</button><br>
         </form>
         {% if prediction %}
             <div class="alert alert-success">
