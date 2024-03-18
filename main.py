@@ -1,3 +1,8 @@
+# Auther: Nitish Kumar Sharma
+# Email: nitish378@gmail.com
+# Date: 14-03-2024
+# License to: @Filebhejo.in
+
 from flask import Flask, request, render_template, jsonify
 
 app = Flask(__name__)
